@@ -3,6 +3,9 @@ spring boot, jpa, thymeleaf, MariaDB
    
 Part01
 ===
+   
+JSON 타입의 데이터를 생성하기 위해서는 Jackson-databind와 같은 라이브러리가 필요한데 스프링 부트 프로젝트는 'Spring Web' 의존성 항목을 추가하는 경우에 자동으로 추가되므로 별도의 설정이 필요하지 않다.
+   
 엔티티 클래스와 JpaRepository
 ---
 @Entity   
