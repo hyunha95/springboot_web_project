@@ -7,6 +7,7 @@
     <list default="true" id="1f4c7787-a2b1-48d5-841e-0b2fde61e91f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex2_practice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ex2_practice/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +173,7 @@
       <workItem from="1662470438638" duration="641000" />
       <workItem from="1662472541026" duration="353000" />
       <workItem from="1662472948224" duration="599000" />
+      <workItem from="1662559625962" duration="1351000" />
     </task>
     <servers />
   </component>
