@@ -90,7 +90,7 @@ https://github.com/hyunha95/springboot_web_project/blob/55a8b2b98df5c44329e247ab
 Spring Data JPA의 경우에는 이러한 처리를 위해서 다음과 같은 방법을 제공한다.   
 - 쿼리 메서드: 메서드의 이름 자체가 쿼리의 구문으로 처리되는 기능
 - @Query: SQL과 유사하게 엔티티 클래스의 정보를 이용해서 쿼리를 작성하는 기능
-- Querysdl 등의 동적 쿼리 처리 기능   
+- Querydsl 등의 동적 쿼리 처리 기능   
    
 쿼리메서드   
 쿼리 메서드는 말 그대로 '메서드의 이름 자체가 질의(query)문'이 되는 흥미로운 기능이다. 쿼리 메서드는 주로 'findBy나 getBy'로 시작하고 이후에 필요한 필드 조건이나 And, Or와 같은 키워드를 이용해서 메서드의 이름 자체로 질의 조건을 만들어 낸다.   
@@ -119,6 +119,7 @@ deleteBy로 시작하는 삭제 처리
 @Query("update Memo m set m.memoText = :memoText where m.mno = :mno")
 int updateMemoText(@Param("mno") Long mno, @Param("memoText") String memoText);
 ```
+만일 ':'를 이용하는 경우는 여러 개의 파라미터를 전달할 때 복잡해 질 경우가 있다고 생각된다면 ':#'을 이용해서 객체를 사용할 수 있다.
 ```java
 @Transactional
 @Modifying
@@ -126,12 +127,37 @@ int updateMemoText(@Param("mno") Long mno, @Param("memoText") String memoText);
 int updateMemoText(@Param("param") Memo memo);
 ```
    
+@Query와 페이징 처리   
+리턴 타입을 Page&lt;엔티티  타입&gt;으로 지정하는 경우에는 count를 처리하는 쿼리를 적용할 수 있다. @Query를 이용할 때는 별도의 countQuery라는 속성을 적용해 주고 Pageable 타입의 파라미터를 전달하면 된다.
+   
 Object[] 리턴   
-@Query 장점 중의 하나는 쿼리 메서드의 경우에는 엔티티 타입의 데이터만을 추출하지만, @Query를 이용하는 경우에는 현재 필요한 데이터만을 Object[]의 형태로 선별적으로 추출할 수 있다는 점이다.
+@Query 장점 중의 하나는 쿼리 메서드의 경우에는 엔티티 타입의 데이터만을 추출하지만, @Query를 이용하는 경우에는 현재 필요한 데이터만을 Object[]의 형태로 선별적으로 추출할 수 있다는 점이다. JPQL을 이용할 때 경우에 따라서 JOIN이나 GROUP BY등을 이용하는 경우가 종종 있는데, 이럴 때는 적당한 엔티티 타입이 존재하지 않는 경우가 많기 떄문에 이런 상황에서 유용하게 Object[]타입을 리턴 타입으로 지정할 수 있다.
+```java
+@Query(value = "select m.mno, m.memoText, CURRENT_DATE from Memo m where m.mno > :mno",
+        countQuery = "select count(m) from Memo m where m.mno > :mno")
+Page<Object[]> getListWithQueryObject(Long Mno, Pageable, pageable);
+```
+   
+Native SQL처리   
+복잡한 JOIN 구문 등을 처리하기 위해서 어쩔 수 없는 선택을 하는 경우에 사용한다.
+@Query의 nativeQuery속성값을 true로 지정하고 일반 SQL을 그대로 사용할 수 있다.
+```java
+@Query(value = "select * from memo where mno > 0", nativeQuery = true)
+List<Object[]> getNativeResult();
+```
 
 
-
-
+Chapter03
+===
+Thymeleaf를 이용하는 프로젝트는 변경 후에 만들어진 결과를 보관(캐싱)하지 않도록 설정해 두는 것이 편리하다. 이를 위해 프로젝트 생성 시 만들어진 application.properties파일에 다음과 같은 항목을 추가한다.
+```java
+spring.thymleaf.cache=false
+```
+Thymeleaf 역시 JSP처럼 서버에서 결과를 만들어서 브라우저로 전송한다. 위의 설정은 이미 만들어진 결과를 서버에서 계속 보관할 것인지에 대한 설정이다. Thymeleaf파일을 수정하고 저장한 후에 브라우저에서 변경된 결과를 확인하기 위한 설정이다.   
+Thymeleaf의 기본적인 사용 방법은 기존의 속성 앞에 'th:'를 붙여주고 속성값을 지정하는 것이다.
+```java
+<h1 th:text="${'Hello World'}"></h1>
+```
 
 
 

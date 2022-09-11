@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4c7787-a2b1-48d5-841e-0b2fde61e91f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3_practice/src/main/resources/templates/sample/ex1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex2_practice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ex2_practice/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex2/src/test/java/org/zerock/ex2/repository/MemoRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex2/src/test/java/org/zerock/ex2/repository/MemoRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex2_practice/src/main/java/org/zerock/ex2_practice/repository/MemoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex2_practice/src/main/java/org/zerock/ex2_practice/repository/MemoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex2_practice/src/test/java/org/zerock/ex2_practice/repository/MemoRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex2_practice/src/test/java/org/zerock/ex2_practice/repository/MemoRepositoryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,20 +85,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Project.color&quot;: &quot;02122a&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nohyunha/Documents/dev/springboot_web_project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Project.color": "02122a",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/nohyunha/Documents/dev/springboot_web_project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.springboot_web_project [bootJar]">
     <configuration name="SpringbootWebProjectApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -174,6 +179,9 @@
       <workItem from="1662472541026" duration="353000" />
       <workItem from="1662472948224" duration="599000" />
       <workItem from="1662559625962" duration="1351000" />
+      <workItem from="1662794159352" duration="6559000" />
+      <workItem from="1662822419579" duration="633000" />
+      <workItem from="1662823345636" duration="4197000" />
     </task>
     <servers />
   </component>
